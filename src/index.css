@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --bg-color: #f5f5f7;
+  --card-bg: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --accent-red: #FF4444;
+  --accent-green: #00FF9D;
+  --accent-blue: #00A3FF;
+  --border-color: #e5e7eb;
+}
+
+.dark {
+  --bg-color: #0a0a0b;
+  --card-bg: #151619;
+  --text-primary: #FFFFFF;
+  --text-secondary: #8E9299;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-red {
+  animation: pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scan-line {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent-green), transparent);
+  animation: scan 3s linear infinite;
+}
+

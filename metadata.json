@@ -1,0 +1,7 @@
+{
+  "name": "ATM Guard: AI Fraud Detection",
+  "description": "Real-time ATM anomaly detection system using IoT sensor fusion and Gemini AI to identify skimming, trapping, and forced transactions.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
