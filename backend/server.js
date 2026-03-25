@@ -30,8 +30,7 @@ app.post("/api/auth/login", (req, res) => {
             tempToken: tempToken,
             username: username,
             email: "admin@atmguard.com",
-            deliveryMethod: "email",
-            demoOtp: otp
+            deliveryMethod: "email"
         });
     } else {
         res.status(401).json({ success: false, message: "Invalid credentials" });
@@ -85,7 +84,7 @@ app.post("/api/auth/resend-2fa", (req, res) => {
         otpStore[username] = otp;
 
         console.log("🔐 Resent OTP:", otp);
-        res.json({ success: true, message: "OTP resent", demoOtp: otp });
+        res.json({ success: true, message: "OTP resent" });
     } catch (err) {
         res.status(401).json({ success: false, message: "Invalid or expired session" });
     }
